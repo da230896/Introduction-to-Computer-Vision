@@ -9,17 +9,32 @@ count, bins, ignored = hist1.hist(arr,50,normed=True)
 curve.plot(bins,1/(sigma * np.sqrt(2*np.pi)) * np.exp((-(bins-mu)**2/2*sigma**2)),color='r')
 #task : try sigma*2
 arr = np.multiply(arr,10)
+
+#Notice that in plot curve is getting more straight lineish because gap between points have increased 
+#while the number of points are still the same
+#standard deviation is now 10*sigma 
+
 count, bins, ignored = hist2.hist(arr,50,normed=True)
 
 curve.plot(bins,1/(sigma * np.sqrt(2*np.pi)) * np.exp((-(bins-mu)**2/2*sigma**2)),color='b')
 f.subplots_adjust(hspace=0)
 plt.show()
 
-# img = cv2.imread('Fruit.jpg')
-# cv2.imshow('Without Noise',img)
-# noise = np.random.normal(size=img.shape[:2]) * 50
-# img += noise
-# cv2.imshow('After Noise',img.astype('uint8'))
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+img = cv2.imread('Fruit.jpg',0)
+cv2.imshow('Without Noise',img)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# print img.shape[:2][0]
+
+noise = np.random.normal(size=img.shape[:2]) * 50
+img += noise.astype('uint8')
+cv2.imshow('Noise',noise)
+# cv2.imshow('After Noise',img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -38,4 +53,4 @@ cv2.destroyAllWindows()
 #   redefine mean of gaussian
 #
 #But the concept remains same that if we increase the mu
-#we increase the sparkling in picture
+#we increase the whiteness in picture
