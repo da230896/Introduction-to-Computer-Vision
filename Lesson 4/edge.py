@@ -22,4 +22,3 @@ cv2.imshow('Gaussian Filter in cv2 self blur edges or Not?',cv2.GaussianBlur(img
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
