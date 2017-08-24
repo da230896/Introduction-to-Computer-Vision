@@ -17,3 +17,5 @@ cv2.destroyAllWindows()
 
 # more sigma increases the noise if we are adding noise
 # But more sigma decreases the noise if we are doing gaussian filter.
+
+# With filtering you might also scale the intensities
