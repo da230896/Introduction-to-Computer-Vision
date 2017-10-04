@@ -5,7 +5,6 @@ from matplotlib import pyplot as plt
 
 # img.shape[:2] produces (height,width)
 
-
 def check(img,template,i,j):
     for x in range(template.shape[:2][0]):
         for y in range(template.shape[:2][1]):
