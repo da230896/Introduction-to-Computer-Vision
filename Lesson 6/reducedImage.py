@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-# img = cv2.imread("img.jpg",0)
-img = cv2.imread("test.jpg",0)
+img = cv2.imread("img.jpg",0)
+# img = cv2.imread("test.jpg",0)
 img_sobel64Fx = cv2.Sobel(img,cv2.CV_64F,1,0,ksize = 3)
 # img_sobel64Fx = np.uint8(np.absolute(img_sobel64Fx))
 img_sobel64Fy = cv2.Sobel(img,cv2.CV_64F,0,1,ksize = 3)
