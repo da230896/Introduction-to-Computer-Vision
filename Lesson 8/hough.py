@@ -39,7 +39,7 @@ for i in range(img.shape[0]):
                     Points[(D,k)] = list()
                 Points[(D,k)].append((i,j))    
 
-# Maximum peaks I am taking is 50 : thus maintain a minHeap of size 100
+# Maximum peaks I am taking is 100 : thus maintain a minHeap of size 100
 # setting threshold is also one way to improve,Farthest point algo is still not clear so O(n^2)
 
 Heap = [(INT_MIN,-1,-1,0)]*100
