@@ -13,24 +13,17 @@ XMAX = img.shape[1]
 
 for i in Lines:
     rho,theta = i[0]
-    x1 = 0
-    y1 = rho/np.sin(theta)
-    if y1 >= YMAX:
-        y1 = YMAX-1
-        x1 = (rho - y1*np.sin(theta))
-    elif y1 < 0:
-        y1 = 0
-        x1 = rho
-    y2 = 0
-    x2 = rho/np.cos(theta)
-    if x2 >= XMAX:
-        x2 = XMAX-1
-        y2 = (rho - x2*np.cos(theta))
-    elif x2 < 0:
-        x2 = 0
-        y2 = rho
+    a = np.cos(theta)
+    b = np.sin(theta)
+    x0 = a*rho
+    y0 = b*rho
 
-    cv2.line(img,(int(x1),int(y1)),(int(x2),int(y2)),(0,255,0))
+    x1 = int(x0 + 1000*(-b))
+    y1 = int(y0 + 1000*a)
+    x2 = int(x0 - 1000*(-b))
+    y2 = int(y0 - 1000*a)
+
+    cv2.line(img,(x1,y1),(x2,y2),(0,255,0))
 
 cv2.imshow("Internal Function",img)
 cv2.waitKey(0)
