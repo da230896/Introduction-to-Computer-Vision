@@ -1,7 +1,7 @@
 import cv2
 import math
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
 froomer = cv2.imread("froomer.jpg",0)
 frizzy = cv2.imread("frizzy.jpg",0)
