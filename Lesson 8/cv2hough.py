@@ -8,6 +8,12 @@ edge = cv2.Canny(img,100,100)
 D = max(edge.shape[0],edge.shape[1])
 Lines = cv2.HoughLines(edge,1,np.pi/180,115)
 
+# First parameter, Input image should be a binary image, so apply threshold or use canny edge detection before finding applying hough transform.
+# Second and third parameters are \rho and \theta accuracies respectively. 
+# Fourth argument is the threshold, which means minimum vote it should get for it to be considered as a line. 
+# Remember, number of votes depend upon number of points on the line. 
+# So it represents the minimum length of line that should be detected.
+
 YMAX = img.shape[0]
 XMAX = img.shape[1]
 
